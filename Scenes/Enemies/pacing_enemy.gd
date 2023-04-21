@@ -5,6 +5,7 @@ var SPEED = 50.0
 const JUMP_VELOCITY = -400.0
 var HP = 5
 var isDying = false
+var isHit = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,7 +14,7 @@ func _ready():
 	get_node("AnimatedSprite2D").set_flip_h(true)
 
 func _physics_process(delta):
-	if not isDying:
+	if not isDying and not isHit:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -46,14 +47,17 @@ func EnemyHurt(area):
 			else:
 				get_node("Area2D/HitTimer").start()
 				$damage_sound.play()
+			isHit = true
 			$AnimatedSprite2D.modulate = Color(1, 0, 0)
 			get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 			
 func _on_timer_timeout():
 	get_node("Area2D/GPUParticles2D").emitting = false
 	queue_free()
+	isHit = false
 	$AnimatedSprite2D.modulate = Color(1, 1, 1)
 
 func _on_hit_timer_timeout():
+	isHit = false
 	$AnimatedSprite2D.modulate = Color(1, 1, 1)
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)

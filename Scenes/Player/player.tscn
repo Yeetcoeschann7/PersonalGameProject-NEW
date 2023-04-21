@@ -223,7 +223,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go72g"]
-size = Vector2(22, 31)
+size = Vector2(22.5671, 31)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 material = SubResource("ShaderMaterial_phe1g")
@@ -273,7 +273,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="HazardCollider" type="CollisionShape2D" parent="HazardArea"]
-position = Vector2(0, 0.5)
+position = Vector2(5.96046e-08, 1.85185)
+scale = Vector2(0.7, 0.8)
 shape = SubResource("RectangleShape2D_go72g")
 
 [node name="Camera2D" type="Camera2D" parent="HazardArea"]

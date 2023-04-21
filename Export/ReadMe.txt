@@ -3,6 +3,7 @@ Credits:
 	Player Sprite - DANI MACCARI
 	Tileset - NicoPardo
 	Music - Jordan Ottesen
+	QA - Andrew Lewis
 
 Controls:
 	Keyboard:

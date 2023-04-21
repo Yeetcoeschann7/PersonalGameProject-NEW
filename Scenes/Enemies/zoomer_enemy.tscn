@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://kuhd2ttfmdkp"]
+[gd_scene load_steps=18 format=3 uid="uid://kuhd2ttfmdkp"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/ZoomerEnemy.gd" id="1_jqm3w"]
 [ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="2_lnq7w"]
@@ -89,6 +89,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6r5nq"]
+radius = 5.09902
+
 [node name="ZoomerEnemy" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_phe1g")
 collision_layer = 3
@@ -106,7 +109,7 @@ shape = SubResource("CircleShape2D_bqoem")
 [node name="Timer" type="Timer" parent="Area2D"]
 
 [node name="HitTimer" type="Timer" parent="Area2D"]
-wait_time = 0.1
+wait_time = 0.07
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
 scale = Vector2(0.3, 0.3)
@@ -118,12 +121,12 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["obstacles"]]
-position = Vector2(3, -3)
+position = Vector2(3, -8)
 sprite_frames = SubResource("SpriteFrames_km14v")
 frame_progress = 0.443508
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_bqoem")
+shape = SubResource("CircleShape2D_6r5nq")
 
 [node name="damage_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nepnj")

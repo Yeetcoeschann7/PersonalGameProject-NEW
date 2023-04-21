@@ -204,7 +204,7 @@ shape = SubResource("RectangleShape2D_rgc3r")
 [node name="Timer" type="Timer" parent="Area2D"]
 
 [node name="HitTimer" type="Timer" parent="Area2D"]
-wait_time = 0.1
+wait_time = 0.07
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
 scale = Vector2(0.3, 0.3)

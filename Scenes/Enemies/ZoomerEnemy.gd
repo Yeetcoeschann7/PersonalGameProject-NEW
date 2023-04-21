@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 var move = Vector2(0,0)
 var rotating: int
-const GRAVITY: int = 800;
-var halfRadius = 15 #get_node("CollisionShape2D").shape.get_radius
+var halfRadius = 15 #$CollisionShape2D.shape.radius
 var isDying = false
 var isHit = false
 var HP = 3
@@ -61,16 +60,19 @@ func EnemyHurt(area):
 				isHit = false
 				get_node("Area2D/HitTimer").start()
 				$damage_sound.play()
+			isHit = true
 			$AnimatedSprite2D.modulate = Color(1, 0, 0)
 			get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 
 func _on_timer_timeout():
 	get_node("Area2D/GPUParticles2D").emitting = false
 	queue_free()
+	isHit = false
 	$AnimatedSprite2D.modulate = Color(1, 1, 1)
 
 
 func _on_hit_timer_timeout():
+	isHit = false
 	isHit = false
 	$AnimatedSprite2D.modulate = Color(1, 1, 1)
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)

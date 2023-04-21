@@ -86,13 +86,13 @@ position = Vector2(-345, -18)
 position = Vector2(-240, -62)
 
 [node name="ZoomerEnemy2" parent="." instance=ExtResource("5_3vbpe")]
-position = Vector2(82, -134)
+position = Vector2(82, -128)
 
 [node name="ZoomerEnemy3" parent="." instance=ExtResource("5_3vbpe")]
-position = Vector2(461, -230)
+position = Vector2(461, -224)
 
 [node name="ZoomerEnemy4" parent="." instance=ExtResource("5_3vbpe")]
-position = Vector2(-145, -196)
+position = Vector2(-145, -192)
 
 [node name="pacing_enemy" parent="." instance=ExtResource("6_pmn51")]
 position = Vector2(433, -15)
