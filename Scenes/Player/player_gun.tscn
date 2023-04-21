@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c46a04qwxsipe"]
+
+[ext_resource type="Texture2D" uid="uid://ppogwhyilidi" path="res://Sprites/MiscTextures/Blunderbuss side.png" id="1_302ys"]
+
+[sub_resource type="GDScript" id="GDScript_aro2r"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+"
+
+[node name="PlayerGun" type="Node2D"]
+position = Vector2(19, 0)
+script = SubResource("GDScript_aro2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-19, 0)
+texture = ExtResource("1_302ys")

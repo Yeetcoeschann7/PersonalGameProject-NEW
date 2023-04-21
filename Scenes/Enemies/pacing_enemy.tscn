@@ -1,0 +1,227 @@
+[gd_scene load_steps=27 format=3 uid="uid://bae061sh02mkc"]
+
+[ext_resource type="Texture2D" uid="uid://bkb4ppkahsslw" path="res://Sprites/potatorPNG/output_idle_strip8.png" id="1_ayt6g"]
+[ext_resource type="Script" path="res://Scenes/Enemies/pacing_enemy.gd" id="1_ic30n"]
+[ext_resource type="Texture2D" uid="uid://cbojav7iwlc08" path="res://Sprites/potatorPNG/output_walk_strip4.png" id="2_oj454"]
+[ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="4_key1s"]
+[ext_resource type="AudioStream" uid="uid://s2htly3mvnwf" path="res://Audio/365672__mikala_oidua__retro-game-sfx_jump-bump.wav" id="5_xw75l"]
+[ext_resource type="AudioStream" uid="uid://bmn3recvxk37n" path="res://Audio/458867__raclure__damage-sound-effect.mp3" id="6_0tlvi"]
+
+[sub_resource type="Shader" id="Shader_elo7q"]
+code = "shader_type canvas_item;
+
+vec4 texturePointSmooth(sampler2D tex, vec2 uv) {
+	vec2 size = vec2(textureSize(tex, 0));
+	vec2 pixel = vec2(1.0) / size;
+	uv -= pixel * vec2(0.5);
+	vec2 uv_pixels = uv * size;
+	vec2 delta_pixel = fract(uv_pixels) - vec2(0.5);
+	vec2 ddxy = fwidth(uv_pixels);
+	vec2 mip = log2(ddxy) - 0.5;
+	return textureLod(tex, uv + (clamp(delta_pixel / ddxy, 0.0, 1.0) - delta_pixel) * pixel, min(mip.x, mip.y));
+}
+
+void fragment() {
+	vec4 Texture = texturePointSmooth(TEXTURE, UV);
+	COLOR = Texture.rgba;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phe1g"]
+shader = SubResource("Shader_elo7q")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ma6s"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(0, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqvom"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(21, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y850g"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(42, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reijs"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(63, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtb35"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(84, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tdc4"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(105, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6gak"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(126, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu4ie"]
+atlas = ExtResource("1_ayt6g")
+region = Rect2(147, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxedt"]
+atlas = ExtResource("2_oj454")
+region = Rect2(0, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mef2k"]
+atlas = ExtResource("2_oj454")
+region = Rect2(21, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultvv"]
+atlas = ExtResource("2_oj454")
+region = Rect2(42, 0, 21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycno4"]
+atlas = ExtResource("2_oj454")
+region = Rect2(63, 0, 21, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vdtt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ma6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqvom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y850g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reijs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtb35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tdc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6gak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu4ie")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxedt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mef2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ultvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycno4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij53l"]
+size = Vector2(10, 19.1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgc3r"]
+size = Vector2(15, 25.8333)
+
+[sub_resource type="Gradient" id="Gradient_k6yqs"]
+offsets = PackedFloat32Array(0, 0.00740741, 1)
+colors = PackedColorArray(1, 0.883333, 0, 1, 0.922609, 0.52098, 0.146578, 1, 0.87451, 0.168627, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nxn6a"]
+gradient = SubResource("Gradient_k6yqs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0k1xb"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_nxn6a")
+
+[node name="pacing_enemy" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_phe1g")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ic30n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -0.999999)
+scale = Vector2(1.5, 1.34)
+sprite_frames = SubResource("SpriteFrames_1vdtt")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.375)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_ij53l")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(11, -26)
+collision_mask = 7
+
+[node name="RayCastRightWall" type="RayCast2D" parent="."]
+position = Vector2(8, 11)
+rotation = -1.5708
+scale = Vector2(5, 0.1)
+collision_mask = 7
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-11, -26)
+collision_mask = 7
+
+[node name="RayCastLeftWall" type="RayCast2D" parent="."]
+position = Vector2(-8, 11)
+rotation = 1.5708
+scale = Vector2(5, 0.1)
+collision_mask = 7
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("RectangleShape2D_rgc3r")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+
+[node name="HitTimer" type="Timer" parent="Area2D"]
+wait_time = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_0k1xb")
+texture = ExtResource("4_key1s")
+one_shot = true
+explosiveness = 1.0
+
+[node name="damage_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xw75l")
+volume_db = 5.0
+
+[node name="die_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0tlvi")
+
+[connection signal="area_entered" from="Area2D" to="." method="EnemyHurt"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/HitTimer" to="." method="_on_hit_timer_timeout"]

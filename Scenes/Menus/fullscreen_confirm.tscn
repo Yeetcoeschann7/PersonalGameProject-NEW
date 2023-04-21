@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx3tlve6gxrbk"]
+
+[ext_resource type="Texture2D" uid="uid://b1tsvcb0s0xry" path="res://Tilesets/Stone Ruins/SR_Stone Ruins_BackGround_FIXED.png" id="1_giwya"]
+[ext_resource type="Script" path="res://Scenes/Menus/FullscreenToggle.gd" id="1_xh0oa"]
+[ext_resource type="FontFile" uid="uid://cdub2jsf7ac01" path="res://Fonts/roses-are-ff0000/RosesareFF0000.ttf" id="2_7dde3"]
+[ext_resource type="Script" path="res://Scenes/Menus/StartButton.gd" id="3_7vkds"]
+
+[sub_resource type="FontVariation" id="FontVariation_kkpgq"]
+base_font = ExtResource("2_7dde3")
+
+[node name="Fullscreen_Confirm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xh0oa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -463.0
+offset_top = -327.0
+offset_right = 474.0
+offset_bottom = 306.0
+texture = ExtResource("1_giwya")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="YesButton" type="Button" parent="Camera2D"]
+offset_left = -52.0
+offset_top = 49.0
+offset_right = 56.0
+offset_bottom = 79.0
+theme_override_fonts/font = SubResource("FontVariation_kkpgq")
+text = "Yes
+"
+script = ExtResource("3_7vkds")
+
+[node name="NoButton" type="Button" parent="Camera2D"]
+offset_left = -52.0
+offset_top = 97.0
+offset_right = 56.0
+offset_bottom = 131.0
+scale = Vector2(1, 0.879999)
+theme_override_fonts/font = SubResource("FontVariation_kkpgq")
+text = "No"
+
+[node name="Label" type="Label" parent="Camera2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -143.0
+offset_right = -68.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.71025, 2.8)
+theme_override_fonts/font = ExtResource("2_7dde3")
+text = "Start 
+In 
+Fullscreen?"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Camera2D/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Camera2D/NoButton" to="." method="_on_no_button_pressed"]

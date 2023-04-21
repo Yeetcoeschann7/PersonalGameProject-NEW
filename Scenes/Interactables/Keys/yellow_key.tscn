@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://dc7j1s8dpmasm"]
+
+[ext_resource type="Script" path="res://Scenes/Interactables/Keys/yellow_key.gd" id="1_v86jn"]
+[ext_resource type="Texture2D" uid="uid://bbhemncpjjsx5" path="res://Sprites/MiscTextures/Key.png" id="2_h7g3k"]
+[ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="3_hf720"]
+[ext_resource type="AudioStream" uid="uid://bxm7tl58embw8" path="res://Audio/166184__drminky__retro-coin-collect.wav" id="4_emfer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_att64"]
+size = Vector2(20, 12)
+
+[sub_resource type="Gradient" id="Gradient_0h7ax"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.207407, 1)
+colors = PackedColorArray(0.913725, 0.560784, 0.0862745, 1, 0.913725, 0.560784, 0.0862745, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k56qa"]
+gradient = SubResource("Gradient_0h7ax")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_74lmk"]
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.1
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_k56qa")
+
+[sub_resource type="Animation" id="Animation_t74nc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("key_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("key_collider:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dmh4h"]
+resource_name = "float"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("key_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 0), Vector2(0, -2), Vector2(0, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("key_collider:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -3), Vector2(0, -4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dim7"]
+_data = {
+"RESET": SubResource("Animation_t74nc"),
+"float": SubResource("Animation_dmh4h")
+}
+
+[node name="yellow_key" type="Area2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_v86jn")
+
+[node name="key_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_h7g3k")
+
+[node name="key_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_att64")
+
+[node name="key_dissolve" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_74lmk")
+texture = ExtResource("3_hf720")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1dim7")
+}
+
+[node name="collect_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_emfer")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

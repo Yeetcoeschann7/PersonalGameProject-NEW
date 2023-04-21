@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scenes/Player/bulletRight.gd" id="1_6n82s"]
+[ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="2_71mi8"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 3.16228
+
+[node name="bullet" type="Area2D" groups=["bullet"]]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource("1_6n82s")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_71mi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

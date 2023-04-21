@@ -1,0 +1,137 @@
+[gd_scene load_steps=17 format=3 uid="uid://kuhd2ttfmdkp"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/ZoomerEnemy.gd" id="1_jqm3w"]
+[ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="2_lnq7w"]
+[ext_resource type="Texture2D" uid="uid://caexci6lye1hw" path="res://Sprites/MiscTextures/Game Boy Advance - Metroid Fusion - Sova.png" id="3_gsuwe"]
+[ext_resource type="AudioStream" uid="uid://s2htly3mvnwf" path="res://Audio/365672__mikala_oidua__retro-game-sfx_jump-bump.wav" id="3_nepnj"]
+[ext_resource type="AudioStream" uid="uid://bmn3recvxk37n" path="res://Audio/458867__raclure__damage-sound-effect.mp3" id="3_pycji"]
+
+[sub_resource type="Shader" id="Shader_elo7q"]
+code = "shader_type canvas_item;
+
+vec4 texturePointSmooth(sampler2D tex, vec2 uv) {
+	vec2 size = vec2(textureSize(tex, 0));
+	vec2 pixel = vec2(1.0) / size;
+	uv -= pixel * vec2(0.5);
+	vec2 uv_pixels = uv * size;
+	vec2 delta_pixel = fract(uv_pixels) - vec2(0.5);
+	vec2 ddxy = fwidth(uv_pixels);
+	vec2 mip = log2(ddxy) - 0.5;
+	return textureLod(tex, uv + (clamp(delta_pixel / ddxy, 0.0, 1.0) - delta_pixel) * pixel, min(mip.x, mip.y));
+}
+
+void fragment() {
+	vec4 Texture = texturePointSmooth(TEXTURE, UV);
+	COLOR = Texture.rgba;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phe1g"]
+shader = SubResource("Shader_elo7q")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqoem"]
+radius = 9.16667
+
+[sub_resource type="Gradient" id="Gradient_vojgq"]
+offsets = PackedFloat32Array(0, 0.00740741, 1)
+colors = PackedColorArray(1, 0.883333, 0, 1, 0.922609, 0.52098, 0.146578, 1, 0.87451, 0.168627, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_patdb"]
+gradient = SubResource("Gradient_vojgq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i0kw7"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_patdb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_348dy"]
+atlas = ExtResource("3_gsuwe")
+region = Rect2(0, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gwe6"]
+atlas = ExtResource("3_gsuwe")
+region = Rect2(33, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ovcg"]
+atlas = ExtResource("3_gsuwe")
+region = Rect2(66, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ojk"]
+atlas = ExtResource("3_gsuwe")
+region = Rect2(99, 0, 33, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km14v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_348dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gwe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ovcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0ojk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ZoomerEnemy" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_phe1g")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_jqm3w")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_bqoem")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+
+[node name="HitTimer" type="Timer" parent="Area2D"]
+wait_time = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_i0kw7")
+texture = ExtResource("2_lnq7w")
+one_shot = true
+explosiveness = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["obstacles"]]
+position = Vector2(3, -3)
+sprite_frames = SubResource("SpriteFrames_km14v")
+frame_progress = 0.443508
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bqoem")
+
+[node name="damage_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nepnj")
+volume_db = 5.0
+
+[node name="die_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pycji")
+
+[connection signal="area_entered" from="Area2D" to="." method="EnemyHurt"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/HitTimer" to="." method="_on_hit_timer_timeout"]

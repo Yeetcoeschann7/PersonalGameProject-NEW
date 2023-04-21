@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://47egrsdj2vbf"]
+
+[ext_resource type="Texture2D" uid="uid://b1tsvcb0s0xry" path="res://Tilesets/Stone Ruins/SR_Stone Ruins_BackGround_FIXED.png" id="1_ahusm"]
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_x0vd4"]
+[ext_resource type="FontFile" uid="uid://cdub2jsf7ac01" path="res://Fonts/roses-are-ff0000/RosesareFF0000.ttf" id="2_cwufd"]
+[ext_resource type="Script" path="res://Scenes/Menus/StartButton.gd" id="4_x5rlg"]
+
+[sub_resource type="FontVariation" id="FontVariation_7md58"]
+base_font = ExtResource("2_cwufd")
+
+[node name="Main_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x0vd4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -463.0
+offset_top = -327.0
+offset_right = 474.0
+offset_bottom = 306.0
+texture = ExtResource("1_ahusm")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="StartButton" type="Button" parent="Camera2D"]
+offset_left = -52.0
+offset_top = 36.0
+offset_right = 56.0
+offset_bottom = 66.0
+theme_override_fonts/font = SubResource("FontVariation_7md58")
+text = "Start"
+script = ExtResource("4_x5rlg")
+
+[node name="QuitButton" type="Button" parent="Camera2D"]
+offset_left = -52.0
+offset_top = 102.0
+offset_right = 56.0
+offset_bottom = 136.0
+scale = Vector2(1, 0.879999)
+theme_override_fonts/font = SubResource("FontVariation_7md58")
+text = "Exit"
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -155.0
+offset_top = -89.0
+offset_right = -43.0
+offset_bottom = -66.0
+scale = Vector2(2.71025, 2.8)
+theme_override_fonts/font = ExtResource("2_cwufd")
+text = "Video Game"
+
+[connection signal="pressed" from="Camera2D/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Camera2D/QuitButton" to="." method="_on_quit_button_pressed"]
