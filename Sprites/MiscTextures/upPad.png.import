@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://381rtu47odgo"
-path="res://.godot/imported/CL_Objects 16x16.png-66b30f55e23430dd9c0b14fbbbe7df2b.ctex"
+uid="uid://dir87rjs403o7"
+path="res://.godot/imported/upPad.png-59710ea24fcd88ca304e65eebf519910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/CyberLab/CL_Objects 16x16.png"
-dest_files=["res://.godot/imported/CL_Objects 16x16.png-66b30f55e23430dd9c0b14fbbbe7df2b.ctex"]
+source_file="res://Sprites/MiscTextures/upPad.png"
+dest_files=["res://.godot/imported/upPad.png-59710ea24fcd88ca304e65eebf519910.ctex"]
 
 [params]
 

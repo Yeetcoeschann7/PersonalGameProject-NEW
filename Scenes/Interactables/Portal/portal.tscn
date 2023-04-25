@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://pdjhj8qy4hg4"]
+[gd_scene load_steps=69 format=3 uid="uid://pdjhj8qy4hg4"]
 
 [ext_resource type="Script" path="res://Scenes/Interactables/Portal/portal.gd" id="1_on0en"]
 [ext_resource type="Texture2D" uid="uid://ci1qxvkbkbj0m" path="res://Sprites/portal/portal01.png" id="2_bom8h"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://de6ei2gfsv4j3" path="res://Sprites/portal/portal62.png" id="63_o4on3"]
 [ext_resource type="Texture2D" uid="uid://cvadh1h67syg4" path="res://Sprites/portal/portal63.png" id="64_jkmfm"]
 [ext_resource type="Texture2D" uid="uid://bt1anroqn2d8t" path="res://Sprites/portal/portal64.png" id="65_533l3"]
+[ext_resource type="Texture2D" uid="uid://dir87rjs403o7" path="res://Sprites/MiscTextures/upPad.png" id="66_msh7u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tp55d"]
 animations = [{
@@ -283,4 +284,7 @@ frame_progress = 0.952548
 scale = Vector2(0.3, 0.3)
 shape = SubResource("CircleShape2D_47np8")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="upIcon" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -21)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("66_msh7u")
