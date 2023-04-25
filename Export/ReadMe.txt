@@ -3,13 +3,13 @@ Credits:
 	Player Sprite - DANI MACCARI
 	Tileset - NicoPardo
 	Music - Jordan Ottesen
-	QA - Andrew Lewis
+	QA - Andrew Lewis, Brendan Liebengood
 
 Controls:
 	Keyboard:
-		WASD controls for player and menus
-		Space for jump and menu select
-		LMB to shoot
+		WASD controls or arrow keys for player and menus
+		Space or Z for jump and menu select
+		LMB or X to shoot
 		Esc to pause
 	Gamepad(Xbox):
 		Left stick and D-pad movement for player
