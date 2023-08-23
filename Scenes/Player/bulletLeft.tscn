@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://bqukxpsvsr8dc"]
 
 [ext_resource type="Script" path="res://Scenes/Player/bulletLeft.gd" id="1_2p4cy"]
 [ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="2_48mht"]
@@ -30,8 +30,8 @@ radius = 3.16228
 
 [node name="bullet" type="Area2D" groups=["bullet"]]
 material = SubResource("ShaderMaterial_phe1g")
-collision_layer = 24
-collision_mask = 24
+collision_layer = 13
+collision_mask = 13
 script = ExtResource("1_2p4cy")
 
 [node name="Sprite" type="Sprite2D" parent="."]

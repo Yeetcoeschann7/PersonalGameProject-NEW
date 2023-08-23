@@ -2,7 +2,7 @@ extends Control
 
 var is_paused = false : set = set_is_paused
 
-func _process(delta):
+func _process(_delta):
 	if is_paused == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 

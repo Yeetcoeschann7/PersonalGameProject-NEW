@@ -1,8 +1,8 @@
 2a60927148abd1d33b818b535e306557
 ::res://::1680796168
-export_presets.cfg::TextFile::-1::1682050846::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1682397094::0::1::::<><>::
 icon.svg::CompressedTexture2D::7978716417212823817::1682038192::1682038192::1::::<><>::
-README.md::TextFile::-1::1682038192::0::1::::<><>::
+README.md::TextFile::-1::1682399244::0::1::::<><>::
 ::res://Audio/::1682038202
 146730__leszek_szary__shoot.wav::AudioStreamWAV::1242112059671823817::1682038202::1682038202::1::::<><>::
 166184__drminky__retro-coin-collect.wav::AudioStreamWAV::4027514119875455057::1682038202::1682038202::1::::<><>::
@@ -15,7 +15,7 @@ PlayerLand.wav::AudioStreamWAV::6207217283148827584::1682038202::1682038202::1::
 PlayerSteps.wav::AudioStreamWAV::69955082492241791::1682038202::1682038202::1::::<><>::
 Water Theme - G Major - Jordan Ottesen.mp3::AudioStreamMP3::5517397429430097843::1682038202::1682038202::1::::<><>::
 ::res://Export/::1682038204
-ReadMe.txt::TextFile::-1::1682050872::0::1::::<><>::
+ReadMe.txt::TextFile::-1::1682397286::0::1::::<><>::
 ::res://Fonts/::1682038204
 ::res://Fonts/8-bit-limit/::1682038204
 8bitlim.ttf::FontFile::3925953267183254949::1682038204::1682038204::1::::<><>::
@@ -47,42 +47,42 @@ SOSUE___.pfm::FontFile::5428851957202025439::1682038206::1682038206::1::::<><>::
 ::res://Scenes/::1682038206
 ::res://Scenes/Enemies/::1682038206
 pacing_enemy.gd::GDScript::-1::1682050198::0::1::::<>CharacterBody2D<>::
-pacing_enemy.tscn::PackedScene::2396252872905668558::1682396408::0::1::::<><>::uid://bkb4ppkahsslw<>res://Scenes/Enemies/pacing_enemy.gd<>uid://cbojav7iwlc08<>uid://drulo6ute268d<>uid://s2htly3mvnwf<>uid://bmn3recvxk37n
+pacing_enemy.tscn::PackedScene::2396252872905668558::1692749796::0::1::::<><>::uid://bkb4ppkahsslw<>res://Scenes/Enemies/pacing_enemy.gd<>uid://cbojav7iwlc08<>uid://drulo6ute268d<>uid://s2htly3mvnwf<>uid://bmn3recvxk37n
 ZoomerEnemy.gd::GDScript::-1::1682050322::0::1::::<>CharacterBody2D<>::
-zoomer_enemy.tscn::PackedScene::743607816144767295::1682396408::0::1::::<><>::res://Scenes/Enemies/ZoomerEnemy.gd<>uid://drulo6ute268d<>uid://caexci6lye1hw<>uid://s2htly3mvnwf<>uid://bmn3recvxk37n
+zoomer_enemy.tscn::PackedScene::743607816144767295::1692749796::0::1::::<><>::res://Scenes/Enemies/ZoomerEnemy.gd<>uid://drulo6ute268d<>uid://caexci6lye1hw<>uid://s2htly3mvnwf<>uid://bmn3recvxk37n
 ::res://Scenes/GUI/::1682038206
-gui.tscn::PackedScene::-1::1682038206::0::1::::<><>::uid://cr8yxxl2fsc7m
-PauseMenu.gd::GDScript::-1::1682038588::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::-1::1682038206::0::1::::<><>::res://Scenes/GUI/PauseMenu.gd<>uid://cdub2jsf7ac01
+gui.tscn::PackedScene::1154927795505161347::1692749796::0::1::::<><>::res://Scenes/GUI/pause_menu.tscn
+PauseMenu.gd::GDScript::-1::1687450636::0::1::::<>Control<>::
+pause_menu.tscn::PackedScene::6421195096780429691::1692749796::0::1::::<><>::res://Scenes/GUI/PauseMenu.gd<>uid://cdub2jsf7ac01
 ::res://Scenes/Interactables/::1682038206
 ::res://Scenes/Interactables/Door/::1682038206
 locked_door.gd::GDScript::-1::1682038206::0::1::::<>StaticBody2D<>::
-locked_door.tscn::PackedScene::9057334507673260089::1682396408::0::1::::<><>::res://Scenes/Interactables/Door/locked_door.gd<>uid://7r5fk518xyh<>uid://dphqd5skdn8wf<>uid://lc2daqvxcnwy
+locked_door.tscn::PackedScene::9057334507673260089::1692749796::0::1::::<><>::res://Scenes/Interactables/Door/locked_door.gd<>uid://7r5fk518xyh<>uid://dphqd5skdn8wf<>uid://lc2daqvxcnwy
 ::res://Scenes/Interactables/Keys/::1682038206
 yellow_key.gd::GDScript::-1::1682038206::0::1::::<>Area2D<>::
-yellow_key.tscn::PackedScene::7366293706617378144::1682396408::0::1::::<><>::res://Scenes/Interactables/Keys/yellow_key.gd<>uid://bbhemncpjjsx5<>uid://drulo6ute268d<>uid://bxm7tl58embw8
+yellow_key.tscn::PackedScene::7366293706617378144::1692749796::0::1::::<><>::res://Scenes/Interactables/Keys/yellow_key.gd<>uid://bbhemncpjjsx5<>uid://drulo6ute268d<>uid://bxm7tl58embw8
 ::res://Scenes/Interactables/Portal/::1682038206
-portal.gd::GDScript::-1::1682396406::0::1::::<>Area2D<>::
-portal.tscn::PackedScene::1059585265773781549::1682396408::0::1::::<><>::res://Scenes/Interactables/Portal/portal.gd<>uid://ci1qxvkbkbj0m<>uid://dmmpce37ubomc<>uid://c06td2n1gfhh0<>uid://cb5qpgh60445f<>uid://dfxo2xyy14ruy<>uid://nue7dwpkto56<>uid://dqe8hdaewrsyk<>uid://cho7xqec0xllm<>uid://bw73chkhqjw5l<>uid://dkjpat3hyjxx2<>uid://d0e3471iq03sp<>uid://cgfxqmvp1sx2s<>uid://17wkmagaknxe<>uid://bjh84leii1nh7<>uid://dbl0unm5uimet<>uid://bv0ktxwhp3u3h<>uid://bwo6cr7wtfllu<>uid://bqeyxekyegv7f<>uid://c186dx1g6d27t<>uid://dc6eetth7eskq<>uid://chppp6r72r7bp<>uid://dwriv75y4vd33<>uid://bsijr282bm3rj<>uid://25lgp3u88wrh<>uid://2a6q5syykv33<>uid://bj862j1at0fx4<>uid://c01fmyqycnbmn<>uid://bv2kb4jtlqb47<>uid://bn8rvxeyvtooq<>uid://dbqofcroo0yr8<>uid://bftegq8hbkw1p<>uid://c6xpc1n5a1opg<>uid://dnvi7e72axmvo<>uid://qpkg2b67jv7v<>uid://ccdg376o5uemm<>uid://d1ludkjtt7eyb<>uid://hkwkf1a8dgsh<>uid://ldyd14504wiw<>uid://6ken2eit5h4y<>uid://bxxhabqujm35w<>uid://b23g637utcci2<>uid://c0v2cu0go1nmk<>uid://0ipvcrmbvqq2<>uid://d35lcdynul75a<>uid://c0achxo1jk4bw<>uid://wbt5m0r3wxxp<>uid://dhcpyau4vh3fc<>uid://7qw8ym3f3ilg<>uid://drr1ew4sud8uj<>uid://duebw8pwytk6i<>uid://ddvlxf3uld25l<>uid://cb5axp8ma2kun<>uid://cfhvtjrxjfjtp<>uid://w76n7v87cpbb<>uid://siqw0yn058vx<>uid://dvumyta235edo<>uid://b2m43nm66v1ya<>uid://cxnuk44sx666m<>uid://cx3ogap5syj3f<>uid://bfdubudckmshx<>uid://bfqlvcqbb7gb3<>uid://de6ei2gfsv4j3<>uid://cvadh1h67syg4<>uid://bt1anroqn2d8t<>uid://dir87rjs403o7
+portal.gd::GDScript::-1::1687450636::0::1::::<>Area2D<>::
+portal.tscn::PackedScene::1059585265773781549::1692749796::0::1::::<><>::res://Scenes/Interactables/Portal/portal.gd<>uid://ci1qxvkbkbj0m<>uid://dmmpce37ubomc<>uid://c06td2n1gfhh0<>uid://cb5qpgh60445f<>uid://dfxo2xyy14ruy<>uid://nue7dwpkto56<>uid://dqe8hdaewrsyk<>uid://cho7xqec0xllm<>uid://bw73chkhqjw5l<>uid://dkjpat3hyjxx2<>uid://d0e3471iq03sp<>uid://cgfxqmvp1sx2s<>uid://17wkmagaknxe<>uid://bjh84leii1nh7<>uid://dbl0unm5uimet<>uid://bv0ktxwhp3u3h<>uid://bwo6cr7wtfllu<>uid://bqeyxekyegv7f<>uid://c186dx1g6d27t<>uid://dc6eetth7eskq<>uid://chppp6r72r7bp<>uid://dwriv75y4vd33<>uid://bsijr282bm3rj<>uid://25lgp3u88wrh<>uid://2a6q5syykv33<>uid://bj862j1at0fx4<>uid://c01fmyqycnbmn<>uid://bv2kb4jtlqb47<>uid://bn8rvxeyvtooq<>uid://dbqofcroo0yr8<>uid://bftegq8hbkw1p<>uid://c6xpc1n5a1opg<>uid://dnvi7e72axmvo<>uid://qpkg2b67jv7v<>uid://ccdg376o5uemm<>uid://d1ludkjtt7eyb<>uid://hkwkf1a8dgsh<>uid://ldyd14504wiw<>uid://6ken2eit5h4y<>uid://bxxhabqujm35w<>uid://b23g637utcci2<>uid://c0v2cu0go1nmk<>uid://0ipvcrmbvqq2<>uid://d35lcdynul75a<>uid://c0achxo1jk4bw<>uid://wbt5m0r3wxxp<>uid://dhcpyau4vh3fc<>uid://7qw8ym3f3ilg<>uid://drr1ew4sud8uj<>uid://duebw8pwytk6i<>uid://ddvlxf3uld25l<>uid://cb5axp8ma2kun<>uid://cfhvtjrxjfjtp<>uid://w76n7v87cpbb<>uid://siqw0yn058vx<>uid://dvumyta235edo<>uid://b2m43nm66v1ya<>uid://cxnuk44sx666m<>uid://cx3ogap5syj3f<>uid://bfdubudckmshx<>uid://bfqlvcqbb7gb3<>uid://de6ei2gfsv4j3<>uid://cvadh1h67syg4<>uid://bt1anroqn2d8t<>uid://dir87rjs403o7
 ::res://Scenes/Maps/::1682038206
 ::res://Scenes/Maps/level_1/::1682038206
-level_1.tscn::PackedScene::8239427697880260144::1682396408::0::1::::<><>::uid://c06a47rw55yro<>uid://dyy2x7t18yhxu<>uid://pdjhj8qy4hg4<>uid://dc7j1s8dpmasm<>uid://b1tsvcb0s0xry<>uid://ckuwy2mwpbwt4<>uid://d2bo8gkun5wir<>uid://bae061sh02mkc<>uid://kuhd2ttfmdkp
+level_1.tscn::PackedScene::8239427697880260144::1692749796::0::1::::<><>::uid://c06a47rw55yro<>uid://dyy2x7t18yhxu<>uid://pdjhj8qy4hg4<>uid://dc7j1s8dpmasm<>uid://b1tsvcb0s0xry<>uid://ckuwy2mwpbwt4<>uid://d2bo8gkun5wir<>uid://bae061sh02mkc<>uid://kuhd2ttfmdkp
 ::res://Scenes/Maps/TestLevel/::1682038206
-TestLevel.tscn::PackedScene::4154444166698944236::1682396408::0::1::::<><>::uid://c06a47rw55yro<>uid://b1tsvcb0s0xry<>uid://ckuwy2mwpbwt4<>uid://dyy2x7t18yhxu<>uid://kuhd2ttfmdkp<>uid://dc7j1s8dpmasm<>uid://bae061sh02mkc<>uid://d2bo8gkun5wir<>uid://pdjhj8qy4hg4
+TestLevel.tscn::PackedScene::4154444166698944236::1692749796::0::1::::<><>::uid://c06a47rw55yro<>uid://b1tsvcb0s0xry<>uid://ckuwy2mwpbwt4<>uid://dyy2x7t18yhxu<>uid://kuhd2ttfmdkp<>uid://dc7j1s8dpmasm<>uid://bae061sh02mkc<>uid://d2bo8gkun5wir<>uid://pdjhj8qy4hg4
 ::res://Scenes/Menus/::1682038206
 FullscreenToggle.gd::GDScript::-1::1682038588::0::1::::<>Control<>::
 fullscreen_confirm.tscn::PackedScene::8832582409050248936::1682038206::0::1::::<><>::uid://b1tsvcb0s0xry<>res://Scenes/Menus/FullscreenToggle.gd<>uid://cdub2jsf7ac01<>res://Scenes/Menus/StartButton.gd
 fullscreen_toggle.tscn::PackedScene::-1::1682038206::0::1::::<><>::res://Scenes/Menus/FullscreenToggle.gd
 main_menu.gd::GDScript::-1::1682038588::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::2101791057220197955::1682396408::0::1::::<><>::uid://b1tsvcb0s0xry<>res://Scenes/Menus/main_menu.gd<>uid://cdub2jsf7ac01<>res://Scenes/Menus/StartButton.gd
+main_menu.tscn::PackedScene::2101791057220197955::1692749796::0::1::::<><>::uid://b1tsvcb0s0xry<>res://Scenes/Menus/main_menu.gd<>uid://cdub2jsf7ac01<>res://Scenes/Menus/StartButton.gd
 StartButton.gd::GDScript::-1::1682038588::0::1::::<>Button<>::
 ::res://Scenes/Player/::1682038206
 bulletLeft.gd::GDScript::-1::1682038588::0::1::::<>Area2D<>::
-bulletLeft.tscn::PackedScene::-1::1682038206::0::1::::<><>::res://Scenes/Player/bulletLeft.gd<>uid://drulo6ute268d
+bulletLeft.tscn::PackedScene::3551378796805927988::1692749796::0::1::::<><>::res://Scenes/Player/bulletLeft.gd<>uid://drulo6ute268d
 bulletRight.gd::GDScript::-1::1682038588::0::1::::<>Area2D<>::
-bulletRight.tscn::PackedScene::-1::1682038206::0::1::::<><>::res://Scenes/Player/bulletRight.gd<>uid://drulo6ute268d
+bulletRight.tscn::PackedScene::8739422611430410284::1692749796::0::1::::<><>::res://Scenes/Player/bulletRight.gd<>uid://drulo6ute268d
 player.gd::GDScript::-1::1682045534::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8895021507878882958::1682396408::0::1::::<><>::res://Scenes/Player/player.gd<>uid://b414uvacckf<>uid://cppohnlijuf25<>uid://c2ci1vu0dnorf<>uid://bh1ts3k5pjm65<>uid://bwiwui54m8x4c<>uid://7j4sls8mp6um<>uid://cuo27x2k0yjy3<>uid://ppogwhyilidi<>res://Scenes/GUI/gui.tscn<>uid://rxxn0gvps0u4<>uid://bmn3recvxk37n
+player.tscn::PackedScene::8895021507878882958::1692749796::0::1::::<><>::res://Scenes/Player/player.gd<>uid://b414uvacckf<>uid://cppohnlijuf25<>uid://c2ci1vu0dnorf<>uid://bh1ts3k5pjm65<>uid://bwiwui54m8x4c<>uid://7j4sls8mp6um<>uid://cuo27x2k0yjy3<>uid://ppogwhyilidi<>res://Scenes/GUI/gui.tscn<>uid://rxxn0gvps0u4<>uid://bmn3recvxk37n
 player_gun.tscn::PackedScene::6872359737037673826::1682038206::0::1::::<><>::uid://ppogwhyilidi
 ::res://Sprites/::1682038208
 ::res://Sprites/MiscTextures/::1682038206
@@ -179,30 +179,9 @@ TiM_anim4.png::CompressedTexture2D::1056719208131440186::1682038206::1682038206:
 TiM_anim5.png::CompressedTexture2D::5857502926896352952::1682038206::1682038206::1::::<><>::
 TiM_anim6.png::CompressedTexture2D::6672602202731718711::1682038206::1682038206::1::::<><>::
 TiM_anim7.png::CompressedTexture2D::6846808246351861632::1682038206::1682038206::1::::<><>::
+::res://Sprites/zoomer/::1692750685
+Spr_Walk.png::CompressedTexture2D::4476195139969485702::1692750700::1692750700::1::::<><>::
 ::res://Tilesets/::1682038210
-::res://Tilesets/CavernFable/::1682038210
-cslike_tileset.png::CompressedTexture2D::2057222375158620762::1682038210::1682038210::1::::<><>::
-::res://Tilesets/CyberLab/::1682038210
-0CL_CyberLab_TileSet 16x16.png::CompressedTexture2D::1982111543927455648::1682038210::1682038210::1::::<><>::
-CL_BackGround 16x16.png::CompressedTexture2D::457192721605838474::1682038210::1682038210::1::::<><>::
-CL_Objects 16x16.png::CompressedTexture2D::2035022118257875702::1682038210::1682038210::1::::<><>::
-CL_TileGround 16x16.png::CompressedTexture2D::7762080092613042619::1682038210::1682038210::1::::<><>::
-Readme.txt::TextFile::-1::1682038210::0::1::::<><>::
-::res://Tilesets/Nature Tileset/::1682038210
-Grass.png::CompressedTexture2D::702984124609716931::1682038210::1682038210::1::::<><>::
-gravelStone.png::CompressedTexture2D::803854762516206147::1682038210::1682038210::1::::<><>::
-mudDirt.png::CompressedTexture2D::7478328502555231636::1682038210::1682038210::1::::<><>::
-redRock.png::CompressedTexture2D::2489998284783334452::1682038210::1682038210::1::::<><>::
-redRock.tres::TileSet::3544213634928604768::1682038210::0::1::::<><>::uid://bbqf54uly4sqe
-sandstone.png::CompressedTexture2D::7635820280370558856::1682038210::1682038210::1::::<><>::
-Snow.png::CompressedTexture2D::7161606870205863438::1682038210::1682038210::1::::<><>::
-tileset_mk_16_16_nature_tileset_godot.png::CompressedTexture2D::5393587935979805979::1682038210::1682038210::1::::<><>::
-::res://Tilesets/Pyramid Ruins/::1682038210
-PR_BackGround 16x16.png::CompressedTexture2D::2223245947996159322::1682038210::1682038210::1::::<><>::
-PR_Objects 16x16.png::CompressedTexture2D::8133301636814134153::1682038210::1682038210::1::::<><>::
-PR_TileGround 16x16.png::CompressedTexture2D::3589163992114657928::1682038210::1682038210::1::::<><>::
-PR_TileSet 16x16.png::CompressedTexture2D::5815973196178021018::1682038210::1682038210::1::::<><>::
-Readme.txt::TextFile::-1::1682038210::0::1::::<><>::
 ::res://Tilesets/Stone Ruins/::1682038210
 Readme.txt::TextFile::-1::1682038210::0::1::::<><>::
 SR_Stone Ruins_BackGround 16x16.png::CompressedTexture2D::1330363460371272899::1682038210::1682038210::1::::<><>::
@@ -210,10 +189,4 @@ SR_Stone Ruins_BackGround_FIXED.png::CompressedTexture2D::4251684310903332094::1
 SR_Stone Ruins_Objects 16x16.png::CompressedTexture2D::2786202012536498412::1682038210::1682038210::1::::<><>::
 SR_Stone Ruins_TileSet 16x16.png::CompressedTexture2D::2893974167480793214::1682038210::1682038210::1::::<><>::
 SR_Stone Ruins_TilesGround 16x16.png::CompressedTexture2D::9173103756284110786::1682038210::1682038210::1::::<><>::
-Tileset1.tres::TileSet::6591611664785863296::1682393978::0::1::::<><>::uid://d3xrxcsae4qcw<>uid://bfxwltenq32pc
-::res://Tilesets/UndergroundMine/::1682038210
-Readme.txt::TextFile::-1::1682038210::0::1::::<><>::
-UM_BackGround 16x16.png::CompressedTexture2D::4430874369706593819::1682038210::1682038210::1::::<><>::
-UM_Objects 16x16.png::CompressedTexture2D::8127170410501469475::1682038210::1682038210::1::::<><>::
-UM_TileGround 16x16.png::CompressedTexture2D::5668712018273619937::1682038210::1682038210::1::::<><>::
-UM_UndergroundMine_TileSet 16x16.png::CompressedTexture2D::6183890923950771825::1682038210::1682038210::1::::<><>::
+Tileset1.tres::TileSet::6591611664785863296::1692749796::0::1::::<><>::uid://d3xrxcsae4qcw<>uid://bfxwltenq32pc

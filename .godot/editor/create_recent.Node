@@ -1,3 +1,4 @@
+ColorRect
 Sprite2D
 TileMap
 TextureRect
@@ -18,7 +19,6 @@ Label
 Button
 VBoxContainer
 CenterContainer
-ColorRect
 CanvasLayer
 Container
 RichTextLabel

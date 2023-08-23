@@ -1,12 +1,6 @@
-res://Scenes/Maps/TestLevel/TestLevel.tscn
-res://Tilesets/Stone Ruins/Tileset1.tres
-res://Scenes/Maps/level_1/level_1.tscn
-res://Scenes/Player/player.tscn
-res://Scenes/Interactables/Keys/yellow_key.tscn
-res://Scenes/Interactables/Portal/portal.tscn
-res://Scenes/Enemies/pacing_enemy.tscn
 res://Scenes/Enemies/zoomer_enemy.tscn
-res://Scenes/Interactables/Door/locked_door.tscn
+res://Tilesets/Stone Ruins/Tileset1.tres
+res://Scenes/Maps/TestLevel/TestLevel.tscn
+res://Scenes/Maps/level_1/level_1.tscn
 res://Scenes/Menus/main_menu.tscn
-res://Scenes/Interactables/Portal/portal.gd
-res://Scenes/GUI/PauseMenu.gd
+res://Scenes/Menus/main_menu.gd

@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://kuhd2ttfmdkp"]
+[gd_scene load_steps=22 format=3 uid="uid://kuhd2ttfmdkp"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/ZoomerEnemy.gd" id="1_jqm3w"]
 [ext_resource type="Texture2D" uid="uid://drulo6ute268d" path="res://Sprites/MiscTextures/bullet.png" id="2_lnq7w"]
-[ext_resource type="Texture2D" uid="uid://caexci6lye1hw" path="res://Sprites/MiscTextures/Game Boy Advance - Metroid Fusion - Sova.png" id="3_gsuwe"]
+[ext_resource type="Texture2D" uid="uid://b41kjrwew74uk" path="res://Sprites/zoomer/Spr_Walk.png" id="3_l1105"]
 [ext_resource type="AudioStream" uid="uid://s2htly3mvnwf" path="res://Audio/365672__mikala_oidua__retro-game-sfx_jump-bump.wav" id="3_nepnj"]
 [ext_resource type="AudioStream" uid="uid://bmn3recvxk37n" path="res://Audio/458867__raclure__damage-sound-effect.mp3" id="3_pycji"]
 
@@ -53,36 +53,64 @@ scale_min = 0.0
 scale_max = 0.5
 color_ramp = SubResource("GradientTexture1D_patdb")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_348dy"]
-atlas = ExtResource("3_gsuwe")
-region = Rect2(0, 0, 33, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqhjr"]
+atlas = ExtResource("3_l1105")
+region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gwe6"]
-atlas = ExtResource("3_gsuwe")
-region = Rect2(33, 0, 33, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsxxg"]
+atlas = ExtResource("3_l1105")
+region = Rect2(40, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ovcg"]
-atlas = ExtResource("3_gsuwe")
-region = Rect2(66, 0, 33, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tp3i"]
+atlas = ExtResource("3_l1105")
+region = Rect2(80, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0ojk"]
-atlas = ExtResource("3_gsuwe")
-region = Rect2(99, 0, 33, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0bs3"]
+atlas = ExtResource("3_l1105")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gll7h"]
+atlas = ExtResource("3_l1105")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ma2b"]
+atlas = ExtResource("3_l1105")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq8ou"]
+atlas = ExtResource("3_l1105")
+region = Rect2(240, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv2nc"]
+atlas = ExtResource("3_l1105")
+region = Rect2(280, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_km14v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_348dy")
+"texture": SubResource("AtlasTexture_iqhjr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0gwe6")
+"texture": SubResource("AtlasTexture_jsxxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ovcg")
+"texture": SubResource("AtlasTexture_0tp3i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t0ojk")
+"texture": SubResource("AtlasTexture_w0bs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gll7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ma2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq8ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv2nc")
 }],
 "loop": true,
 "name": &"default",
@@ -121,9 +149,10 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["obstacles"]]
-position = Vector2(3, -8)
+position = Vector2(-1, -3)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_km14v")
-frame_progress = 0.443508
+frame_progress = 0.649644
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6r5nq")

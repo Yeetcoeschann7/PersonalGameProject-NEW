@@ -6,7 +6,7 @@ func _ready():
 	$upIcon.visible = false
 	
 
-func _process(delta):
+func _process(_delta):
 	if self.overlaps_body(get_tree().get_first_node_in_group("player")):
 		$upIcon.visible = true
 		if Input.is_action_pressed("up"):

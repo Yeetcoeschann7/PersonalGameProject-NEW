@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cxqqe6y3rot6r"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/PauseMenu.gd" id="1_ngr2p"]
 [ext_resource type="FontFile" uid="uid://cdub2jsf7ac01" path="res://Fonts/roses-are-ff0000/RosesareFF0000.ttf" id="2_qg8c8"]
