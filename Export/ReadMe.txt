@@ -15,6 +15,6 @@ Controls:
 		Left stick and D-pad movement for player
 		D-pad for menus
 		A-button for jump and menu select
-		X-button for shootw
+		X-button for shoot
 		Start to pause
 
